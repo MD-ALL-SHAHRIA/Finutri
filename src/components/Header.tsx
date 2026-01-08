@@ -21,8 +21,7 @@ function SolidCaret() {
 }
 
 export default function Header() {
-  // State to track the currently active navigation item
-  // Defaulting to "Health Tips" to match your image reference
+  
   const [activeLink, setActiveLink] = useState("Health Tips");
 
   const navLinks = [
@@ -122,11 +121,11 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              onClick={() => setActiveLink(item.name)} // Update active state on click
+              onClick={() => setActiveLink(item.name)} 
               className={`flex items-center gap-1 transition-all ${
                 activeLink === item.name
-                  ? "text-brand-primary border-b-[2px] border-brand-primary pb-3.5 -mb-3.5" // Active Style
-                  : "hover:text-brand-primary text-gray-600" // Inactive Style
+                  ? "text-brand-primary border-b-[2px] border-brand-primary pb-3.5 -mb-3.5" 
+                  : "hover:text-brand-primary text-gray-600" 
               }`}
             >
               {item.name}
