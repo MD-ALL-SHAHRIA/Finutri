@@ -1,3 +1,13 @@
+"use client";
+
+import ArticleCard from "@/components/ArticleCard";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Newsletter from "@/components/Newsletter";
+import { cn } from "@/lib/utils";
+import Link from "next/link"; 
+import { useState } from "react";
+
 const articles = [
   {
     id: 1,
@@ -73,9 +83,80 @@ const categories = [
 ];
 
 export default function Home() {
+  const [activeCategory, setActiveCategory] = useState("All Topics");
+
   return (
-    <div>
-      
+    <div className="min-h-screen bg-white font-sans text-gray-900">
+      <Header />
+
+      {/* Hero Section */}
+      <section className="bg-brand-light/50 py-12 lg:py-16">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mb-4 flex gap-2">
+            <span className="rounded-full bg-emerald-400 px-3 py-1 font-semibold text-xs text-black">
+              WELLNESS RESOURCES
+            </span>
+            <span className="rounded-full bg-emerald-200 px-3 py-1 text-xs font-bold text-emerald-800">
+              Expert-reviewed content
+            </span>
+          </div>
+          <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl">
+            Health Tips & Herbal Guides
+          </h1>
+          <p className="max-w-2xl text-lg text-gray-900">
+            Discover evidence-based wellness advice, herbal remedy guides, and
+            health tips from our team of pharmacists and herbal medicine
+            experts.
+          </p>
+        </div>
+      </section>
+
+      {/* Content Area */}
+      <section className="container mx-auto py-12 px-4 lg:px-8">
+        {/* Filters - Updated to Mint/Dark Green style with interactivity */}
+        <div className="mb-10 flex flex-wrap gap-2 overflow-x-auto pb-4">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={cn(
+                "whitespace-nowrap rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200",
+                activeCategory === cat
+                  ? "bg-[#166534] text-white shadow-md" // Active state
+                  : "bg-[#e6f4f1] text-[#166534] hover:bg-[#d1fae5]" // Inactive state
+              )}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Header for Grid */}
+        <div className="mb-8 flex items-end justify-between">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900">
+              Latest Articles
+            </h2>
+            <p className="text-sm text-gray-500 mt-1">6 articles available</p>
+          </div>
+          <Link
+            href="#"
+            className="hidden text-sm font-semibold text-emerald-600 hover:underline md:block"
+          >
+            View all articles →
+          </Link>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {articles.map((article) => (
+            <ArticleCard key={article.id} {...article} />
+          ))}
+        </div>
+      </section>
+
+      <Newsletter />
+      <Footer />
     </div>
   );
 }
