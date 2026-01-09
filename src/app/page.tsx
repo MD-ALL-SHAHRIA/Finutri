@@ -1,65 +1,81 @@
-import Image from "next/image";
+const articles = [
+  {
+    id: 1,
+    title: "The Complete Guide to Elderberry for Immune Support",
+    category: "Immune Health",
+    readTime: "5 min read",
+    excerpt:
+      "Discover how elderberry has been used for centuries to support immune function and learn the science behind this powerful herbal remedy.",
+    date: "Jan 15, 2025",
+    imageBgColor: "bg-green-50",
+    badge: "NEW" as const,
+  },
+  {
+    id: 2,
+    title: "Natural Sleep Solutions: Herbs That Help You Rest",
+    category: "Sleep & Relaxation",
+    readTime: "7 min read",
+    excerpt:
+      "Explore calming herbs like valerian root, chamomile, and passionflower that can help you achieve deeper, more restorative sleep naturally.",
+    date: "Jan 12, 2025",
+    imageBgColor: "bg-green-50",
+  },
+  {
+    id: 3,
+    title: "Understanding Adaptogenic Herbs for Stress Management",
+    category: "Herbal Guides",
+    readTime: "6 min read",
+    excerpt:
+      "Learn how adaptogens like ashwagandha and rhodiola help your body respond to stress and maintain balance during challenging times.",
+    date: "Jan 10, 2025",
+    imageBgColor: "bg-green-50",
+    badge: "POPULAR" as const,
+  },
+  {
+    id: 4,
+    title: "Digestive Health: The Role of Bitter Herbs",
+    category: "Digestive Wellness",
+    readTime: "5 min read",
+    excerpt:
+      "Discover how traditional bitter herbs support digestion, improve nutrient absorption, and promote overall gut health.",
+    date: "Jan 8, 2025",
+    imageBgColor: "bg-green-50",
+  },
+  {
+    id: 5,
+    title: "The Science Behind Vitamin C and Immune Function",
+    category: "Seasonal Care",
+    readTime: "8 min read",
+    excerpt:
+      "Understand how vitamin C supports your immune system and why it's essential during times when your body needs extra support.",
+    date: "Jan 5, 2025",
+    imageBgColor: "bg-green-50",
+    badge: "POPULAR" as const,
+  },
+  {
+    id: 6,
+    title: "Echinacea: Benefits, Dosage, and Usage Guidelines",
+    category: "Herbal Guides",
+    readTime: "6 min read",
+    excerpt:
+      "A comprehensive look at echinacea, one of the most researched immune-supporting herbs, including how to use it effectively.",
+    date: "Jan 3, 2025",
+    imageBgColor: "bg-green-50",
+  },
+];
+
+const categories = [
+  "All Topics",
+  "Immune Health",
+  "Sleep & Relaxation",
+  "Digestive Wellness",
+  "Seasonal Care",
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div>
+      
     </div>
   );
 }
