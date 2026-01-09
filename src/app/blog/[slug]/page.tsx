@@ -1,6 +1,7 @@
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import BlogSidebar from "@/components/BlogSidebar";
 
 import {
   Calendar,
@@ -278,6 +279,8 @@ export default function BlogPost() {
               </div>
             </div>
           </article>
+
+          <BlogSidebar />
 
          
           
